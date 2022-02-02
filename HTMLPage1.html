@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("img.jpg");
+        background-color: #cccccc;
+      }
+
+      div {
+        background-color: grey;
+        opacity: 0.9;
+        backdrop-filter: blur(15px);
+        border-radius: 1em;
+        transform: translateY(50%);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+        font-weight: bold;
+        font-size: 2em;
+        padding: 1em;
+        border-radius: 0.5em;
+      }
+
+      input[type="text"] {
+        font-size: 1em;
+        width: 20em;
+        height: 1em;
+        font-weight: bold;
+      }
+
+      input[type="password"] {
+        font-size: 1em;
+        width: 20em;
+        height: 1em;
+        font-weight: bold;
+        background: white;
+      }
+
+      .btn {
+        /* position: relative;
+        left: 50%;
+        transform: translateX(-50%); */
+        background-color: black;
+        color: white;
+        width: 20em;
+        min-height: 3em;
+        border-radius: 0.5em;
+        transition: transform 0.7s ease;
+      }
+      .btn:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form>
+        <label for="Uname">Username:</label><br />
+        <input type="text" id="Uname" name="Username" /><br />
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" name="Password" /><br />
+        <input type="submit" text="Login" class="btn" />
+      </form>
+    </div>
+  </body>
+</html>
