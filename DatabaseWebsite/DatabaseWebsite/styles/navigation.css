@@ -12,7 +12,12 @@
 body {
   min-height: 100vh;
   padding: 30px;
-  background: linear-gradient(to left top, #f1f4f9, #dff1ff);
+  background: linear-gradient(
+    to left top,
+    hsl(175, 66%, 64%),
+    hsl(188, 76%, 67%),
+    hsl(200, 86%, 70%)
+  );
   display: grid;
   grid-template-columns: 300px minmax(450px, auto);
 }
@@ -124,4 +129,7 @@ body {
   box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
   padding: 15px;
   min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
