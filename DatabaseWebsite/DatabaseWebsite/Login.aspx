@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DatabaseWebsite.Login" %>
+﻿l<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DatabaseWebsite.Login" %>
 
 
 <!DOCTYPE html>
@@ -7,97 +7,311 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>Login</title>
-    <style>
+   <style>
         * {
-            box-sizing: border-box;
-        }
-        body{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background-image:url("Images/gucslide.jpg");
-            background-size:cover;
-             background-attachment:fixed;
-            background-color: #cccccc;
-            }
+  margin: 0;
+  padding: 0;
+}
 
-        div{
-            background-color:transparent;
+body {
+  background: #031323;
+  overflow: hidden;
+  margin:-20px;
+}
 
-             backdrop-filter:blur(15px) brightness(110%);
-             border-radius:1em;
-             transform: translateY(25%)
-        }
-        form{
-            display:flex;
-            flex-direction:column;           
-            background-color:transparent;
-            font-weight:bold;
-            font-size:2em;
-            padding:1em;
-            border-radius:0.5em;
+.fas {
+  width: 32px;
+}
+
+section {
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.box {
+  position: relative;
+}
+  .square {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    animation: square 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+  }
+
+  @keyframes square {
+    0%,
+    100% {
+      transform: translateY(-20px);
+    }
+
+    50% {
+      transform: translateY(20px);
+    }
+  }
+
+  .square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    right: -45px;
+  }
+
+  .square:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 105px;
+    left: -125px;
+    z-index: 2;
+  }
+
+  .square:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    right: -45px;
+    z-index: 2;
+  }
+
+  .square:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    bottom: 35px;
+    left: -95px;
+  }
+
+  .square:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -25px;
+  }
+
+  .square:nth-child(6) {
+    width: 85px;
+    height: 85px;
+    top: 165px;
+    right: -155px;
+    z-index: 2;
+  }
 
 
-        }
+.container {
+  position: relative;
+  padding: 50px;
+  width: 260px;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
 
-        input[type = "text"]{
-        font-size: 1em; 
-        width: 20em;
-        height:1em;
-        font-weight:bold;
+.container::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 2%
+  );
+}
 
-        }
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+  h2 {
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
 
-        input[type = "password"]{
-        font-size: 1em; 
-        width: 20em;
-        height:1em;
-        font-weight:bold;
+  .inputBx {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+    input {
+      width: 100%;
+      outline: none;
+      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 10px;
+      padding-left: 40px;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
 
-        }
+    .password-control {
+      position: absolute;
+      top: 11px;
+      right: 10px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+      transition: 0.5s;
+    }
 
+    .view {
+      background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+      transition: 0.5s;
+    }
 
-        .btn{
-            max-width:10em;
-            position:relative;
-            left:50%;
-            transform:translateX(-50%);
-            background-color:black;
-            color:white;
-            min-width:30em;
-            min-height:3em;
-            border-radius:0.5em;
-        }
-        .btn:hover{
-            max-width:10em;
-            position:relative;
-            left:50%;
-            transform:translateX(-50%);
-            background-color:white;
-            color:black;
-            min-width:30em;
-            min-height:3em;
-            border-radius:0.5em;
-            cursor:pointer;
+    .fas {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+    }
 
-        }
+    input[type="submit"] {
+      background: #fff;
+      color: #111;
+      max-width: 100px;
+      padding: 8px 10px;
+      box-shadow: none;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 1.5s;
+    }
+
+    input[type="submit"]:hover {
+      background: linear-gradient(
+        115deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(255, 255, 255, 0.25)
+      );
+      color: #fff;
+      transition: 0.5s;
+    }
+
+    input::placeholder {
+      color: #fff;
+    }
+
+    span {
+      position: absolute;
+      left: 30px;
+      padding: 10px;
+      display: inline-block;
+      color: #fff;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+
+    input:focus ~ span{
+        transform: translateX(-30px) translateY(-25px);
+      font-size: 12px;
+    }
+    input:valid ~ span {
+      transform: translateX(-30px) translateY(-25px);
+      font-size: 12px;
+    }
+  
+
+  p {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+    
+        filter: invert(42%) sepia(93%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+ 
+    }
+
     </style>
+      <link rel="stylesheet" href="/css/all.css" />
 </head>
 <body>
-    <div>
-        <form id="form1" runat="server">
-            <label for="Uname">Email:</label> <br/>
-            <asp:TextBox ID="TextBox1" runat="server" type="text"></asp:TextBox><br>
-            
-            <label for="password">Password:</label> <br/> 
-            <asp:TextBox ID="TextBox2" runat="server" type="password"></asp:TextBox> <br />
+        <section>
+        <div class="box">
+          <div class="square" style="--i:0;"></div>
+          <div class="square" style="--i:1;"></div>
+          <div class="square" style="--i:2;"></div>
+          <div class="square" style="--i:3;"></div>
+          <div class="square" style="--i:4;"></div>
+          <div class="square" style="--i:5;"></div>
 
-            <asp:Button ID="sign_in" class="btn" runat="server" Text="Sign in" OnClick="sign_in_Click1" /> <br />
-            <asp:Button ID="Button1" class="btn" runat="server" Text="Register" OnClick="RegisterPage" /> 
-        </form>
-    </div>
-   <img src="/Images/GUC LOGO.png" alt="Sample Photo" 
-        style="z-index: 1; left: 1100px; top: -55px; position: absolute" />
-
+         <div class="container"> 
+          <div class="form"> 
+            <h2>LOGIN to GUC</h2>
+            <form id="form1" runat="server">
+              <div class="inputBx">
+                <asp:TextBox ID="TextBox1" runat="server" type="text" required="required"> </asp:TextBox>
+                <span>Login</span>
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="inputBx password">
+                <asp:TextBox ID="TextBox2" runat="server" type="password" required="required"> </asp:TextBox>
+                <span>Password</span>
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                <i class="fas fa-key"></i>
+              </div>
+              <div class="inputBx">
+                <asp:Button ID="Sign_in"  runat="server" Text="Login" OnClick="Sign_in_Click1" /> 
+                  <br />
+                  <br />
+                 <asp:Button ID="Button2"  runat="server" Text="Register" OnClick="RegisterPage" />
+              </div>
+                  <script>
+                      function show_hide_password(target) {
+                         var input = document.getElementById('TextBox2');
+                           if (input.getAttribute('type') == 'password') {
+                                   target.classList.add('view');
+                                   input.setAttribute('type', 'text');
+                           } else {
+                                   target.classList.remove('view');
+                                   input.setAttribute('type', 'password');
+                           }
+                           return false;
+                           }
+                       </script>
+            </form>  
+              <p>Don't have an account <a href="#">Sign up</a></p>
+          </div>
+        </div>  
+        </div>
+    </section>
 </body>
 </html>
