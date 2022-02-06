@@ -2,7 +2,8 @@ var nav = document.getElementById("nav");
 var menu = document.getElementById("menu");
 var content = document.querySelector(".main-content");
 var navItems = document.querySelector(".nav-items");
-
+var navLinks = document.querySelectorAll(".nav-link");
+var screenWidth = window.outerWidth;
 menu.addEventListener("click", () => {
   if (nav.style.width == "85px") {
     nav.style.width = "300px";
@@ -10,19 +11,24 @@ menu.addEventListener("click", () => {
     nav.style.height = "90vh";
     content.style.marginLeft = "3rem";
     navItems.style.display = "block";
+    for (i = 0; i < navLinks.length; i++) {
+      navLinks[i].style.display = "block";
+    }
   } else {
     nav.style.width = "85px";
-    nav.style.minHeight = "0px";
-    nav.style.height = "70px";
+    nav.style.height = "90vh";
     content.style.marginLeft = "-180px";
-    navItems.style.display = "none";
+    for (i = 0; i < navLinks.length; i++) {
+      navLinks[i].style.display = "none";
+    }
   }
 });
 
-// for (i = 0; i < a.length; i++) {
-//   a[i].style.display = "block";
-// }
-// for (i = 0; i < icons.length; i++) {
-//   icons[i].style.display = "block";
-// }
-// span[0].style.display = "block";
+if (screenWidth <= 768) {
+  nav.style.width = "85px";
+  nav.style.height = "90vh";
+  content.style.marginLeft = "-180px";
+  for (i = 0; i < navLinks.length; i++) {
+    navLinks[i].style.display = "none";
+  }
+}
