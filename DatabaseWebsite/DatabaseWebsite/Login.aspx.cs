@@ -15,10 +15,9 @@ namespace DatabaseWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
         }
 
-        protected void sign_in_Click1(object sender, EventArgs e)
+        protected void Sign_in_Click1(object sender, EventArgs e)
         {
             String connStr = WebConfigurationManager.ConnectionStrings["DatabaseWebsite"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
@@ -78,5 +77,6 @@ namespace DatabaseWebsite
         {
             Response.Redirect("Registeration.aspx");
         }
+
     }
 }
