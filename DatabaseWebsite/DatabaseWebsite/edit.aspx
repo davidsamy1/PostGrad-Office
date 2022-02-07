@@ -12,144 +12,59 @@ Inherits="DatabaseWebsite.edit" %>
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <!-- <style>
-      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <style>
+      form {
+        position: relative;
+        /* background: #0f0; */
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .text {
+        width: 100%;
         outline: none;
         border: none;
-        font-family: "Raleway", sans-serif;
-        transition: 0.4s;
-      }
-
-      body {
-        min-height: 100vh;
-        padding: 30px;
-        background: linear-gradient(
-          to left top,
-          hsl(175, 66%, 64%),
-          hsl(188, 76%, 67%),
-          hsl(200, 86%, 70%)
-        );
-        display: grid;
-        grid-template-columns: 300px minmax(450px, auto);
-      }
-
-      .navbar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-        height: 90vh;
-        background-color: hsla(0, 0%, 100%, 0.251);
-        backdrop-filter: blur(20px);
-        border: 2px solid hsla(0, 0%, 100%, 0.188);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 10px;
+        padding-left: 40px;
         border-radius: 15px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
-        padding: 15px;
-        min-height: 600px;
+        color: #fff;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
-
-      .toggle-menu {
-        position: absolute;
-        display: block;
-        top: 15px;
-        left: 25px;
-        background-color: transparent;
-        cursor: pointer;
-      }
-
-      .toggle-menu i {
-        color: hsl(327, 46%, 35%);
-        font-size: 2.5em;
-      }
-
-      .nav-items {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        height: 65vh;
-      }
-
-      .admin-profile,
-      .list-item,
-      .logout {
-        width: 100%;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 10px;
-      }
-
-      .list-item:hover,
-      .logout:hover {
-        background-color: hsla(0, 0%, 100%, 0.376);
-      }
-
-      .admin-profile {
-        margin: 40px 0;
-        background-color: hsla(0, 0%, 100%, 0.439);
-      }
-
-      .logout {
-        margin-top: 30px;
-      }
-
-      .icons {
-        width: 50px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-      }
-
-      .icons img {
-        width: 40px;
-        height: 40px;
-      }
-
-      .icons i {
-        font-size: 2em;
-        color: hsl(327, 46%, 35%);
-      }
-
-      .nav-link,
-      .navbar span {
-        text-decoration: none;
-        display: flex;
-        font-size: 1.5em;
+      input[type="submit"] {
+        background: #fff;
+        color: #111;
+        max-width: 100px;
+        padding: 8px 10px;
+        box-shadow: none;
         letter-spacing: 1px;
-        text-transform: uppercase;
-        color: hsl(327, 46%, 35%);
-        margin-left: 10px;
+        cursor: pointer;
+        transition: 1.5s;
+        border-radius: 15px;
       }
 
-      .main-content {
-        height: 90vh;
-        margin-left: 3rem;
-        background-color: hsla(0, 0%, 100%, 0.251);
-        backdrop-filter: blur(20px);
-        border: 2px solid hsla(0, 0%, 100%, 0.188);
-        border-radius: 15px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
-        padding: 15px;
-        min-height: 600px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      input[type="submit"]:hover {
+        background: linear-gradient(
+          115deg,
+          rgba(0, 0, 0, 0.1),
+          rgba(255, 255, 255, 0.25)
+        );
+        color: #fff;
+        transition: 0.5s;
       }
-    </style> -->
-    <link rel="stylesheet" href="./styles/navigation.css" />
+
+      input::placeholder {
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <div class="nav-holder">
@@ -217,72 +132,48 @@ Inherits="DatabaseWebsite.edit" %>
     </div>
     <section class="main-content">
       <form id="form1" runat="server">
-        <div>
-          <asp:Label
-            class="label"
-            ID="Label1"
-            runat="server"
-            server=""
-            Text="Name"
-          ></asp:Label>
-          <br />
-          <asp:TextBox class="text" ID="name" runat="server"></asp:TextBox>
-          <br />
-          <asp:Label
-            class="label"
-            ID="Label2"
-            runat="server"
-            Text="Field Of Work"
-          ></asp:Label>
-          <br />
-          <asp:TextBox class="text" ID="field" runat="server"></asp:TextBox>
-          <br />
-          <asp:Button
-            ID="Button1"
-            runat="server"
-            Text="Update"
-            OnClick="Button1_Click"
-          />
-          <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
-        </div>
+        <asp:Label
+          class="label"
+          ID="Label1"
+          runat="server"
+          server=""
+          Text="Name"
+        ></asp:Label>
+
+        <asp:TextBox class="text" ID="name" runat="server"></asp:TextBox>
+
+        <asp:Label
+          class="label"
+          ID="Label2"
+          runat="server"
+          Text="Field Of Work"
+        ></asp:Label>
+
+        <asp:TextBox class="text" ID="field" runat="server"></asp:TextBox>
+
+        <asp:Button
+          ID="Button1"
+          runat="server"
+          Text="Update"
+          OnClick="Button1_Click"
+        />
+
+        <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
       </form>
     </section>
 
+    <script src="./scripts/navigation.js"></script>
     <script>
-      var nav = document.getElementById("nav");
-      var menu = document.getElementById("menu");
-      var content = document.querySelector(".main-content");
-      var navItems = document.querySelector(".nav-items");
-      var navLinks = document.querySelectorAll(".nav-link");
-      var screenWidth = window.outerWidth;
-      menu.addEventListener("click", () => {
-        if (nav.style.width == "85px") {
-          nav.style.width = "300px";
-          nav.style.minHeight = "600px";
-          nav.style.height = "90vh";
-          content.style.marginLeft = "3rem";
-          navItems.style.display = "block";
-          for (i = 0; i < navLinks.length; i++) {
-            navLinks[i].style.display = "block";
-          }
-        } else {
-          nav.style.width = "85px";
-          nav.style.height = "90vh";
-          content.style.marginLeft = "-180px";
-          for (i = 0; i < navLinks.length; i++) {
-            navLinks[i].style.display = "none";
-          }
-        }
-      });
-
-      if (screenWidth <= 768) {
-        nav.style.width = "85px";
-        nav.style.height = "90vh";
-        content.style.marginLeft = "-180px";
-        for (i = 0; i < navLinks.length; i++) {
-          navLinks[i].style.display = "none";
-        }
+      let listItem = document.querySelectorAll(".list-item");
+      for (let i = 0; i < listItem.length; i++) {
+        listItem[i].addEventListener("mouseover", () => {
+          listItem[0].classList.remove("active");
+        });
+        listItem[i].addEventListener("mouseleave", () => {
+          listItem[0].classList.add("active");
+        });
       }
+      listItem[0].classList.add("active");
     </script>
   </body>
 </html>
