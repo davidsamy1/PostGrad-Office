@@ -74,7 +74,8 @@ body {
 }
 
 .list-item:hover,
-.logout:hover {
+.logout:hover,
+.active {
   background-color: hsla(0, 0%, 100%, 0.376);
 }
 
