@@ -15,9 +15,26 @@ Inherits="DatabaseWebsite.edit" %>
 
     <link rel="stylesheet" href="./styles/navigation.css" />
     <style>
+      .main-content {
+        height: 90vh;
+        margin-left: 3rem;
+        /* border-radius: 15px; */
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
+        background-color: hsla(0, 0%, 100%, 0.251);
+        backdrop-filter: blur(20px);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+      }
+
       form {
         position: relative;
-        /* background: #0f0; */
+        opacity: 1;
         width: 50%;
         height: 50%;
         display: flex;
@@ -25,6 +42,9 @@ Inherits="DatabaseWebsite.edit" %>
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        padding: 2rem;
+        border-radius: 15px;
+        /* border: #fff 1px solid; */
       }
 
       .text {
@@ -64,6 +84,24 @@ Inherits="DatabaseWebsite.edit" %>
 
       input::placeholder {
         color: #fff;
+      }
+
+      .fail,
+      .success {
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        color: #fff;
+        backdrop-filter: blur(20px);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+      }
+      .fail {
+        background: linear-gradient(to bottom right, #fbd72b, #f9484a);
+      }
+      .success {
+        background: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
       }
     </style>
   </head>
