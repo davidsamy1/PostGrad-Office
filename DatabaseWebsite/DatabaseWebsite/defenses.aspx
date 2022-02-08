@@ -193,13 +193,15 @@ Inherits="DatabaseWebsite.defenses" %>
         <div class="grid-container">
           <asp:GridView
             class="grid"
+            ID="GridView1"
             PagerStyle-CssClass="pager"
             HeaderStyle-CssClass="header"
             RowStyle-CssClass="rows"
             AllowPaging="True"
-            ID="GridView1"
+            OnPageIndexChanging="GridView1_PageIndexChanging"
             runat="server"
           ></asp:GridView>
+
           <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
         </div>
       </form>
