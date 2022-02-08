@@ -22,8 +22,9 @@ Inherits="DatabaseWebsite.edit" %>
         height: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        gap: 1rem;
       }
 
       .text {
@@ -79,7 +80,7 @@ Inherits="DatabaseWebsite.edit" %>
             </div>
             <span class="nav-link">Examiner</span>
           </div>
-          <div class="list-item">
+          <div class="list-item active">
             <div class="icons">
               <a href="/edit.aspx">
                 <i class="fas fa-user-edit"></i>
@@ -164,16 +165,7 @@ Inherits="DatabaseWebsite.edit" %>
 
     <script src="./scripts/navigation.js"></script>
     <script>
-      let listItem = document.querySelectorAll(".list-item");
-      for (let i = 0; i < listItem.length; i++) {
-        listItem[i].addEventListener("mouseover", () => {
-          listItem[0].classList.remove("active");
-        });
-        listItem[i].addEventListener("mouseleave", () => {
-          listItem[0].classList.add("active");
-        });
-      }
-      listItem[0].classList.add("active");
+      setActive(0);
     </script>
   </body>
 </html>

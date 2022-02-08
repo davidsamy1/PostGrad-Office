@@ -19,3 +19,15 @@ menu.addEventListener("click", () => {
     }
   }
 });
+
+function setActive(number) {
+  let listItem = document.querySelectorAll(".list-item");
+  for (let i = 0; i < listItem.length; i++) {
+    listItem[i].addEventListener("mouseover", () => {
+      listItem[number].classList.remove("active");
+    });
+    listItem[i].addEventListener("mouseleave", () => {
+      listItem[number].classList.add("active");
+    });
+  }
+}
