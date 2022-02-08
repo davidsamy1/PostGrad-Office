@@ -1,122 +1,229 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addGrade.aspx.cs" Inherits="DatabaseWebsite.addGrade" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addGrade.aspx.cs"
+Inherits="DatabaseWebsite.addGrade" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+  <head runat="server">
+    <title>Add Grade</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./styles/navigation.css" />
     <style>
-        body{
-            background:yellow;
-        }
+      .main-content {
+        height: 90vh;
+        margin-left: 3rem;
+        /* border-radius: 15px; */
+        position: relative;
+        overflow: hidden;
+        padding: 15px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
+        background-color: hsla(0, 0%, 100%, 0.251);
+        backdrop-filter: blur(20px);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+      }
 
-        div{
-            display:flex;
-            flex-direction:column;
-            justify-content:space-evenly;
-            align-items:center;
-            min-height:10vh;
-        }
+      form {
+        position: relative;
+        opacity: 1;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        border-radius: 15px;
+        /* border: #fff 1px solid; */
+      }
 
-        .label{
-            font-weight:bold;
-            font-size:1.5em;
-        }
-        .text{
-            font-size: 1em;
-            width: 25em;
-            height: 2em;
-            font-weight: bold;
-            border-radius:1em;
-        }
+      .text {
+        width: 100%;
+        outline: none;
+        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 10px;
+        padding-left: 40px;
+        border-radius: 15px;
+        color: #fff;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      input[Type="datetime-local"] {
+        height: 3rem;
+      }
+      input[type="submit"] {
+        background: #fff;
+        color: #111;
+        max-width: 100px;
+        padding: 8px 10px;
+        box-shadow: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 1.5s;
+        border-radius: 15px;
+      }
 
-        .text.date{
-            width: 31em;
-            height: 2.5em;
-            font-size: 1em;
-            font-weight: bold;
-            border-radius:1em;
-        }
+      input[type="submit"]:hover {
+        background: linear-gradient(
+          115deg,
+          rgba(0, 0, 0, 0.1),
+          rgba(255, 255, 255, 0.25)
+        );
+        color: #fff;
+        transition: 0.5s;
+      }
 
-        .fail{
-            font-weight:bold;
-            font-size:1.5em;
-            position:relative;
-            padding-top:2em;
-            left:46.5%;
-            color:red;
-            z-index:-1
-/**/
-        }
+      input::placeholder {
+        color: #fff;
+      }
 
-         .success{
-            font-weight:bold;
-            font-size:1.5em;
-            position:relative;
-            padding-top:2em;
-            left:41%;
-            color:green;
-            z-index:-1;
-        }
-
-        #Button1{
-            margin: 0;
-            background-color:white;
-            width: 15em;
-            height:3em;
-            border: 3px solid black;
-            border-radius:1em;
-            font-weight:bold;
-            font-size: 1em;
-            transition: all 0.5s ease;
-        }
-        #Button1:hover{
-           color: white;
-            cursor:pointer;
-            box-shadow:inset 15em 0 0 0 #ef2f88;
-
-        }
-
-        #btn2{
-            margin: 0;
-            background-color:white;
-            width: 10em;
-            height:3em;
-            border: 3px solid black;
-            border-radius:1em;
-            font-weight:bold;
-            font-size: 1em;
-            transition: all 0.5s ease;
-            position:absolute;
-            top:5%;
-            left:5%;
-        }
-        #btn2:hover{
-            color: white;
-            cursor:pointer;
-            box-shadow:inset 15em 0 0 0 #ef2f88;
-        }
+      .fail,
+      .success {
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        color: #fff;
+        backdrop-filter: blur(20px);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+      }
+      .fail {
+        background: linear-gradient(to bottom right, #fbd72b, #f9484a);
+      }
+      .success {
+        background: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+      }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Label class="label" ID="Label2" runat="server" Text="Thesis Serial number:" type="number"></asp:Label>
-            <br />
-            <asp:TextBox class="text" ID="thesis" runat="server"  Type="number"></asp:TextBox>
-            <br />
-            <asp:Label class="label" ID="Label3" runat="server" Text="Defense Date:"></asp:Label>
-            <br />
-            <asp:TextBox class="text date"  ID="date" runat="server" Type ="datetime-local"></asp:TextBox>
-            <br />
-            <asp:Label class="label" ID="Label1" runat="server" Text="Grade:"></asp:Label>
-            <br />
-            <asp:TextBox class="text"  ID="grade" runat="server"></asp:TextBox>
-            <br />
-            <asp:Button ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
-                        <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
-
+  </head>
+  <body>
+    <div class="nav-holder">
+      <nav class="navbar" id="nav">
+        <button class="toggle-menu" id="menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-items">
+          <div class="admin-profile">
+            <div class="icons">
+              <i class="fas fa-user"></i>
+            </div>
+            <span class="nav-link">Examiner</span>
+          </div>
+          <div class="list-item">
+            <div class="icons">
+              <a href="/edit.aspx">
+                <i class="fas fa-user-edit"></i>
+              </a>
+            </div>
+            <a href="/edit.aspx" class="nav-link">Edit Profile</a>
+          </div>
+          <div class="list-item">
+            <div class="icons">
+              <a href="/defenses.aspx">
+                <i class="fas fa-shield-alt"></i>
+              </a>
+            </div>
+            <a href="/defenses.aspx" class="nav-link">My Defenses</a>
+          </div>
+          <div class="list-item">
+            <div class="icons">
+              <a href="/addComment.aspx">
+                <i class="far fa-comment-dots"></i>
+              </a>
+            </div>
+            <a href="/addComment.aspx" class="nav-link">Add Comment</a>
+          </div>
+          <div class="list-item active">
+            <div class="icons">
+              <a href="/addGrade.aspx">
+                <i class="fas fa-users"></i>
+              </a>
+            </div>
+            <a href="/addGrade.aspx" class="nav-link">Add Grade</a>
+          </div>
+          <div class="list-item">
+            <div class="icons">
+              <a href="/search.aspx">
+                <i class="fas fa-search"></i>
+              </a>
+            </div>
+            <a href="/search.aspx" class="nav-link">Thesis Search</a>
+          </div>
+          <div class="list-item logout">
+            <div class="icons">
+              <a href="#">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+            </div>
+            <a href="#" class="nav-link">Logout</a>
+          </div>
         </div>
-    </form>
-</body>
+      </nav>
+    </div>
+    <section class="main-content">
+      <form id="form1" runat="server">
+        <asp:Label
+          class="label"
+          ID="Label2"
+          runat="server"
+          Text="Thesis Serial number:"
+          type="number"
+        ></asp:Label>
+
+        <asp:TextBox
+          class="text"
+          ID="thesis"
+          runat="server"
+          Type="number"
+        ></asp:TextBox>
+
+        <asp:Label
+          class="label"
+          ID="Label3"
+          runat="server"
+          Text="Defense Date:"
+        ></asp:Label>
+
+        <asp:TextBox
+          class="text date"
+          ID="date"
+          runat="server"
+          Type="datetime-local"
+        ></asp:TextBox>
+
+        <asp:Label
+          class="label"
+          ID="Label1"
+          runat="server"
+          Text="Grade:"
+        ></asp:Label>
+
+        <asp:TextBox class="text" ID="grade" runat="server"></asp:TextBox>
+
+        <asp:Button
+          ID="Button1"
+          runat="server"
+          Text="Update"
+          OnClick="Button1_Click"
+        />
+        <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
+      </form>
+    </section>
+    <script src="./scripts/navigation.js"></script>
+    <script>
+      setActive(3);
+    </script>
+  </body>
 </html>
