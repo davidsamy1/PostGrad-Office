@@ -66,7 +66,7 @@ namespace DatabaseWebsite
                 else if (type.Value.ToString() == "3")
                 {
                     MessageBox.Show("LOGIN SUCCESSFULLY", "EXAMINER", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Response.Redirect("examiner.aspx");
+                    Response.Redirect("edit.aspx");
 
                 }
                 conn.Close();
