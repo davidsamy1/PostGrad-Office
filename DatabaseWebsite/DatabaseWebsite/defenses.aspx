@@ -5,7 +5,7 @@ Inherits="DatabaseWebsite.defenses" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
-    <title></title>
+    <title>My Defences</title>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
