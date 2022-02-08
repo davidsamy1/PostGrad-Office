@@ -117,20 +117,3 @@ body {
   color: hsl(327, 46%, 35%);
   margin-left: 10px;
 }
-
-.main-content {
-  height: 90vh;
-  margin-left: 3rem;
-  background-color: hsla(0, 0%, 100%, 0.251);
-  backdrop-filter: blur(20px);
-  border: 2px solid hsla(0, 0%, 100%, 0.188);
-  border-radius: 15px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
-  padding: 15px;
-  min-height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
