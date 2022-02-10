@@ -6,8 +6,13 @@ Inherits="DatabaseWebsite.examiner" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
     <title>Examiner</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./styles/navigation.css" />
-    n
   </head>
   <body>
     <div class="nav-holder">
@@ -73,6 +78,8 @@ Inherits="DatabaseWebsite.examiner" %>
         </div>
       </nav>
     </div>
-    <form id="form1" runat="server"></form>
+    <section class="main-content">
+      <form id="form1" runat="server"></form>
+    </section>
   </body>
 </html>
