@@ -102,7 +102,7 @@ Inherits="DatabaseWebsite.defenses" %>
         width: 100%;
       }
       .pager {
-        background: #f00;
+        background: #0f0;
       }
 
       .header {
