@@ -6,6 +6,8 @@ Inherits="DatabaseWebsite.examiner" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
     <title>Examiner</title>
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    n
   </head>
   <body>
     <div class="nav-holder">
