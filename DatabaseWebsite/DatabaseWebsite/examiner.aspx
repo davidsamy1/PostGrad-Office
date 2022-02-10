@@ -27,7 +27,7 @@ Inherits="DatabaseWebsite.examiner" %>
             </div>
             <span class="nav-link">Examiner</span>
           </div>
-          <div class="list-item active">
+          <div class="list-item">
             <div class="icons">
               <a href="/edit.aspx">
                 <i class="fas fa-user-edit"></i>
@@ -81,5 +81,6 @@ Inherits="DatabaseWebsite.examiner" %>
     <section class="main-content">
       <form id="form1" runat="server"></form>
     </section>
+    <script src="./scripts/navigation.js"></script>
   </body>
 </html>
