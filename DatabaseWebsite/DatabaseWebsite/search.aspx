@@ -114,7 +114,7 @@ Inherits="DatabaseWebsite.search" %>
         width: 100%;
       }
       .pager {
-        background: #f00;
+        background: #0f0;
       }
 
       .header {
@@ -222,6 +222,9 @@ Inherits="DatabaseWebsite.search" %>
           PagerStyle-CssClass="pager"
           HeaderStyle-CssClass="header"
           RowStyle-CssClass="rows"
+          PageSize="5"
+          allowpaging="true"
+          OnPageIndexChanging="GridView1_PageIndexChanging"
           ID="GridView1"
           runat="server"
         ></asp:GridView>
