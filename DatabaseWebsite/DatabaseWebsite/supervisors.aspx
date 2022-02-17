@@ -21,5 +21,6 @@ CodeBehind="supervisors.aspx.cs" Inherits="DatabaseWebsite.supervisors"
         <asp:GridView ID="GridView1" runat="server"></asp:GridView>
       </div>
     </form>
+    <script src="./scripts/navigation.js"></script>
   </body>
 </html>
