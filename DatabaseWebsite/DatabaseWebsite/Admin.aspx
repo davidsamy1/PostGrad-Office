@@ -15,8 +15,68 @@ Inherits="DatabaseWebsite.Admin" %>
     <link rel="stylesheet" href="./styles/navigation.css" />
   </head>
   <body>
+    <nav class="navbar" id="nav">
+      <button class="toggle-menu" id="menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-items">
+        <div class="admin-profile">
+          <div class="icons">
+            <i class="fas fa-user"></i>
+          </div>
+          <span class="nav-link">Admin</span>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/supervisors.aspx">
+              <i class="fas fa-user-edit"></i>
+            </a>
+          </div>
+          <a href="/supervisors.aspx" class="nav-link">Supervisors</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/defenses.aspx">
+              <i class="fas fa-shield-alt"></i>
+            </a>
+          </div>
+          <a href="/defenses.aspx" class="nav-link">My Defenses</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/addComment.aspx">
+              <i class="far fa-comment-dots"></i>
+            </a>
+          </div>
+          <a href="/addComment.aspx" class="nav-link">Add Comment</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/addGrade.aspx">
+              <i class="fas fa-users"></i>
+            </a>
+          </div>
+          <a href="/addGrade.aspx" class="nav-link">Add Grade</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/search.aspx">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+          <a href="/search.aspx" class="nav-link">Thesis Search</a>
+        </div>
+        <div class="list-item logout">
+          <div class="icons">
+            <a href="#">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </div>
+          <a href="#" class="nav-link">Logout</a>
+        </div>
+      </div>
+    </nav>
     <form id="form1" runat="server">
-      <p>&nbsp;</p>
       <p style="height: 264px">
         <asp:Button
           ID="Button1"
@@ -24,8 +84,7 @@ Inherits="DatabaseWebsite.Admin" %>
           OnClick="Supervisors"
           Text="List Supervisors"
         />
-        &nbsp;<asp:GridView ID="ListSupGrid" runat="server">
-        </asp:GridView>
+
         <asp:Button
           ID="Button3"
           runat="server"
@@ -33,6 +92,7 @@ Inherits="DatabaseWebsite.Admin" %>
           Width="173px"
           OnClick="ThesisRedirect"
         />
+        <asp:GridView ID="ListSupGrid" runat="server"> </asp:GridView>
       </p>
       <p style="height: 183px">&nbsp;</p>
       <p>&nbsp;</p>

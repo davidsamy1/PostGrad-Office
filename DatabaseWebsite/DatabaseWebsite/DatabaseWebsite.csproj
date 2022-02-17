@@ -95,6 +95,7 @@
     <Content Include="search.aspx" />
     <Content Include="Student home.aspx" />
     <Content Include="Student info.aspx" />
+    <Content Include="supervisors.aspx" />
     <Content Include="Thesis.aspx" />
     <Content Include="Web.config" />
     <Content Include="Supervisor.aspx" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="Supervisor.aspx.designer.cs">
       <DependentUpon>Supervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="supervisors.aspx.cs">
+      <DependentUpon>supervisors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="supervisors.aspx.designer.cs">
+      <DependentUpon>supervisors.aspx</DependentUpon>
     </Compile>
     <Compile Include="Thesis.aspx.cs">
       <DependentUpon>Thesis.aspx</DependentUpon>
