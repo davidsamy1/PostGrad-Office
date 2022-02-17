@@ -76,24 +76,15 @@ Inherits="DatabaseWebsite.Admin" %>
         </div>
       </div>
     </nav>
-    <form id="form1" runat="server">
-      <p style="height: 264px">
-        <asp:Button
-          ID="Button1"
-          runat="server"
-          OnClick="Supervisors"
-          Text="List Supervisors"
-        />
 
-        <asp:Button
-          ID="Button3"
-          runat="server"
-          Text="Theses"
-          Width="173px"
-          OnClick="ThesisRedirect"
-        />
-        <asp:GridView ID="ListSupGrid" runat="server"> </asp:GridView>
-      </p>
+    <form id="form1" runat="server">
+      <asp:Button
+        ID="Button3"
+        runat="server"
+        Text="Theses"
+        Width="173px"
+        OnClick="ThesisRedirect"
+      />
     </form>
     <script src="./scripts/navigation.js"></script>
   </body>
