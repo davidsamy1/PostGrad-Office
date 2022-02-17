@@ -87,6 +87,8 @@
     <Content Include="Images\unnamed %281%29.jpg" />
     <Content Include="Images\unnamed %282%29.jpg" />
     <Content Include="Issue Payment.aspx" />
+    <Content Include="IssueInstallments.aspx" />
+    <Content Include="IssuePayment.aspx" />
     <Content Include="link and add publications.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Images\login2.jpg" />
@@ -97,6 +99,7 @@
     <Content Include="Student info.aspx" />
     <Content Include="supervisors.aspx" />
     <Content Include="Thesis.aspx" />
+    <Content Include="UpdateExtension.aspx" />
     <Content Include="Web.config" />
     <Content Include="Supervisor.aspx" />
   </ItemGroup>
@@ -171,6 +174,20 @@
     <Compile Include="Issue Payment.aspx.designer.cs">
       <DependentUpon>Issue Payment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IssueInstallments.aspx.cs">
+      <DependentUpon>IssueInstallments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IssueInstallments.aspx.designer.cs">
+      <DependentUpon>IssueInstallments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IssuePayment.aspx.cs">
+      <DependentUpon>IssuePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IssuePayment.aspx.designer.cs">
+      <DependentUpon>IssuePayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="link and add publications.aspx.cs">
       <DependentUpon>link and add publications.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +251,13 @@
     </Compile>
     <Compile Include="Thesis.aspx.designer.cs">
       <DependentUpon>Thesis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateExtension.aspx.cs">
+      <DependentUpon>UpdateExtension.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateExtension.aspx.designer.cs">
+      <DependentUpon>UpdateExtension.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
