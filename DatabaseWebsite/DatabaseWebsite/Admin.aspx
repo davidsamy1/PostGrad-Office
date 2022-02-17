@@ -44,27 +44,31 @@ Inherits="DatabaseWebsite.Admin" %>
         </div>
         <div class="list-item">
           <div class="icons">
-            <a href="/addComment.aspx">
+            <a href="/IssuePayment.aspx">
               <i class="far fa-comment-dots"></i>
             </a>
           </div>
-          <a href="/addComment.aspx" class="nav-link">Add Comment</a>
+          <a href="/IssuePayment.aspx" class="nav-link">Payments</a>
         </div>
         <div class="list-item">
           <div class="icons">
-            <a href="/addGrade.aspx">
+            <a href="/IssueInstallments.aspx">
               <i class="fas fa-users"></i>
             </a>
           </div>
-          <a href="/addGrade.aspx" class="nav-link">Add Grade</a>
+          <a href="/IssueInstallments.aspx" class="nav-link"
+            >Installments</a
+          >
         </div>
         <div class="list-item">
           <div class="icons">
-            <a href="/search.aspx">
+            <a href="/UpdateExtension.aspx">
               <i class="fas fa-search"></i>
             </a>
           </div>
-          <a href="/search.aspx" class="nav-link">Thesis Search</a>
+          <a href="/UpdateExtension.aspx" class="nav-link"
+            >Extensions</a
+          >
         </div>
         <div class="list-item logout">
           <div class="icons">
