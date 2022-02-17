@@ -36,11 +36,11 @@ Inherits="DatabaseWebsite.Admin" %>
         </div>
         <div class="list-item">
           <div class="icons">
-            <a href="/defenses.aspx">
+            <a href="/Thesis.aspx">
               <i class="fas fa-shield-alt"></i>
             </a>
           </div>
-          <a href="/defenses.aspx" class="nav-link">My Defenses</a>
+          <a href="/Thesis.aspx" class="nav-link">List Theses</a>
         </div>
         <div class="list-item">
           <div class="icons">
@@ -77,15 +77,7 @@ Inherits="DatabaseWebsite.Admin" %>
       </div>
     </nav>
 
-    <form id="form1" runat="server">
-      <asp:Button
-        ID="Button3"
-        runat="server"
-        Text="Theses"
-        Width="173px"
-        OnClick="ThesisRedirect"
-      />
-    </form>
+    <form id="form1" runat="server"></form>
     <script src="./scripts/navigation.js"></script>
   </body>
 </html>

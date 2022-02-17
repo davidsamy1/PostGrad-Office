@@ -17,28 +17,28 @@ namespace DatabaseWebsite
 
         }
 
-        protected void Supervisors(object sender, EventArgs e)
-        {
-            string connStr = WebConfigurationManager.ConnectionStrings["DatabaseWebsite"].ToString();
-            //create a new connection
-            SqlConnection conn = new SqlConnection(connStr);
+        // protected void Supervisors(object sender, EventArgs e)
+        // {
+        //     string connStr = WebConfigurationManager.ConnectionStrings["DatabaseWebsite"].ToString();
+        //     //create a new connection
+        //     SqlConnection conn = new SqlConnection(connStr);
 
-            SqlCommand ListSup = new SqlCommand("AdminListSup", conn);
-            ListSup.CommandType = CommandType.StoredProcedure;
+        //     SqlCommand ListSup = new SqlCommand("AdminListSup", conn);
+        //     ListSup.CommandType = CommandType.StoredProcedure;
 
-            conn.Open();
-            ListSup.ExecuteNonQuery();
-            conn.Close();
+        //     conn.Open();
+        //     ListSup.ExecuteNonQuery();
+        //     conn.Close();
 
-            conn.Open();
-            ListSup.ExecuteNonQuery();
-            SqlDataAdapter sqlDa = new SqlDataAdapter(ListSup);
-            DataTable da = new DataTable();
-            sqlDa.Fill(da);
-            ListSupGrid.DataSource = da;
-            ListSupGrid.DataBind();
-            conn.Close();
-        }
+        //     conn.Open();
+        //     ListSup.ExecuteNonQuery();
+        //     SqlDataAdapter sqlDa = new SqlDataAdapter(ListSup);
+        //     DataTable da = new DataTable();
+        //     sqlDa.Fill(da);
+        //     ListSupGrid.DataSource = da;
+        //     ListSupGrid.DataBind();
+        //     conn.Close();
+        // }
 
 
         protected void ThesisRedirect(object sender, EventArgs e)
