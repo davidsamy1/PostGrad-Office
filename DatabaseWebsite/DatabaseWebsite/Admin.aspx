@@ -94,8 +94,7 @@ Inherits="DatabaseWebsite.Admin" %>
         />
         <asp:GridView ID="ListSupGrid" runat="server"> </asp:GridView>
       </p>
-      <p style="height: 183px">&nbsp;</p>
-      <p>&nbsp;</p>
     </form>
+    <script src="./scripts/navigation.js"></script>
   </body>
 </html>
