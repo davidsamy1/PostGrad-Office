@@ -16,24 +16,34 @@ namespace DatabaseWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            string connStr = WebConfigurationManager.ConnectionStrings["DatabaseWebsite"].ToString();
+            
+           string connStr = WebConfigurationManager.ConnectionStrings["DatabaseWebsite"].ToString();
             //create a new connection
             SqlConnection conn = new SqlConnection(connStr);
 
-            SqlCommand ListThesis = new SqlCommand("AdminViewAllTheses", conn);
-            ListThesis.CommandType = CommandType.StoredProcedure;
+            SqlCommand ListTheses = new SqlCommand("AdminViewAllTheses", conn);
+            ListTheses.CommandType = CommandType.StoredProcedure;
+
+            SqlCommand OngoingThesis = new SqlCommand("AdminViewOngoingThesis", conn);
+            OngoingThesis.CommandType = CommandType.StoredProcedure;
+
 
             conn.Open();
-            SqlDataReader rdr = ListThesis.ExecuteReader(CommandBehavior.CloseConnection);
-            while(rdr.Read())
-            {
-                String ThesisName = rdr.GetString(rdr.GetOrdinal("name"));
-                Label name = new Label();
-                name.Text = ThesisName;
-            }
+            ListTheses.ExecuteNonQuery();
+            SqlDataAdapter sqlDa = new SqlDataAdapter(ListTheses);
+            DataTable da = new DataTable();
+            sqlDa.Fill(da);
+            ListThesesGrid.DataSource = da;
+            ListThesesGrid.DataBind();
 
-            */
+            OngoingThesis.ExecuteNonQuery();
+            SqlDataAdapter Ongoing = new SqlDataAdapter(OngoingThesis);
+            DataTable OngoingTable = new DataTable();
+            Ongoing.Fill(OngoingTable);
+            OngoingGrid.DataSource = OngoingTable;
+            OngoingGrid.DataBind();
+
+            conn.Close();
         }
 
     
