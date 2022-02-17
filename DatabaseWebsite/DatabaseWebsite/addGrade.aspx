@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addGrade.aspx.cs"
-Inherits="DatabaseWebsite.addGrade" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"
+CodeBehind="addGrade.aspx.cs" Inherits="DatabaseWebsite.addGrade" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@ Inherits="DatabaseWebsite.addGrade" %>
       .main-content {
         height: 90vh;
         margin-left: 3rem;
-        /* border-radius: 15px; */
+        border-radius: 15px;
         position: relative;
         overflow: hidden;
         padding: 15px;
@@ -60,10 +60,10 @@ Inherits="DatabaseWebsite.addGrade" %>
         font-size: 16px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
-      input[Type="datetime-local"] {
+      input[Type='datetime-local'] {
         height: 3rem;
       }
-      input[type="submit"] {
+      input[type='submit'] {
         background: #fff;
         color: #111;
         max-width: 100px;
@@ -75,7 +75,7 @@ Inherits="DatabaseWebsite.addGrade" %>
         border-radius: 15px;
       }
 
-      input[type="submit"]:hover {
+      input[type='submit']:hover {
         background: linear-gradient(
           115deg,
           rgba(0, 0, 0, 0.1),
@@ -210,7 +210,11 @@ Inherits="DatabaseWebsite.addGrade" %>
           Text="Grade:"
         ></asp:Label>
 
-        <asp:TextBox class="text" ID="grade" runat="server"></asp:TextBox>
+        <asp:TextBox
+          class="text"
+          ID="grade"
+          runat="server"
+        ></asp:TextBox>
 
         <asp:Button
           ID="Button1"
@@ -218,7 +222,12 @@ Inherits="DatabaseWebsite.addGrade" %>
           Text="Update"
           OnClick="Button1_Click"
         />
-        <asp:Button ID="btn2" runat="server" Text="back" OnClick="back" />
+        <asp:Button
+          ID="btn2"
+          runat="server"
+          Text="back"
+          OnClick="back"
+        />
       </form>
     </section>
     <script src="./scripts/navigation.js"></script>
