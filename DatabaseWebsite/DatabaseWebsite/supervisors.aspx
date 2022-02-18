@@ -216,5 +216,8 @@ CodeBehind="supervisors.aspx.cs" Inherits="DatabaseWebsite.supervisors"
       </form>
     </section>
     <script src="./scripts/navigation.js"></script>
+    <script>
+      setActive(0);
+    </script>
   </body>
 </html>
