@@ -9,8 +9,32 @@ Inherits="DatabaseWebsite.IssueInstallments" %>
     <title>Issue Installments</title>
   </head>
   <body>
-    <form id="form1" runat="server">
-      <div></div>
-    </form>
+    <section class="main-content">
+      <form id="form1" runat="server">
+        Payment ID:
+        <asp:TextBox
+          ID="PaymentIDBox"
+          runat="server"
+          type="number"
+          min="0"
+          max="1000000"
+          step="1"
+        ></asp:TextBox>
+
+        Start Date:
+        <asp:TextBox
+          ID="StartDateBox"
+          runat="server"
+          textmode="Date"
+        ></asp:TextBox>
+
+        <asp:Button
+          ID="IssueInstallmentButton"
+          runat="server"
+          Text="Issue Installments"
+          OnClick="IssueInstallmentClick"
+        />
+      </form>
+    </section>
   </body>
 </html>
