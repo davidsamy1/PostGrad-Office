@@ -245,7 +245,7 @@ Inherits="DatabaseWebsite.IssuePayment" %>
     </section>
     <script src="./scripts/navigation.js"></script>
     <script>
-      setActive(1);
+      setActive(2);
     </script>
   </body>
 </html>
