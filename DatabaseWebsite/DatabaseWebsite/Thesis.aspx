@@ -114,11 +114,19 @@ CodeBehind="Thesis.aspx.cs" Inherits="DatabaseWebsite.Thesis" %>
       td,
       th {
         /* border-right: #555 2px solid; */
-        padding: 0.25rem;
+        font-size: 12px;
+        padding: 0.25em;
       }
       td:last-child,
       th:last-child {
         border: none;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        td,
+        th {
+          font-size: 9px;
+        }
       }
     </style>
   </head>
