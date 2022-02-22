@@ -5,7 +5,7 @@ info.aspx.cs" Inherits="DatabaseWebsite.Student_viewer" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
-    <title>nfo</title>
+    <title>Info</title>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
