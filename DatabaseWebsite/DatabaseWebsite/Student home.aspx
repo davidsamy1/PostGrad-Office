@@ -23,14 +23,14 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
         <div class="nav-items">
           <div class="admin-profile">
             <div class="icons">
-              <i class="fas fa-user-cog"></i>
+              <i class="fas fa-user-graduate"></i>
             </div>
             <span class="nav-link">Student</span>
           </div>
           <div class="list-item">
             <div class="icons">
               <a href="/Student info.aspx">
-                <i class="fas fa-user-tie"></i>
+                <i class="fas fa-info"></i>
               </a>
             </div>
             <a href="/Student info.aspx" class="nav-link"
@@ -40,7 +40,7 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
           <div class="list-item">
             <div class="icons">
               <a href="/courses.aspx">
-                <i class="fas fa-scroll"></i>
+                <i class="fas fa-graduation-cap"></i>
               </a>
             </div>
             <a href="/courses.aspx" class="nav-link">Courses</a>
@@ -48,7 +48,7 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
           <div class="list-item">
             <div class="icons">
               <a href="/getall thesis.aspx">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-scroll"></i>
               </a>
             </div>
             <a href="/getall thesis.aspx" class="nav-link">Theses</a>
@@ -56,7 +56,7 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
           <div class="list-item">
             <div class="icons">
               <a href="/fillandaddprogressreport.aspx">
-                <i class="fas fa-coins"></i>
+                <i class="fas fa-clipboard"></i>
               </a>
             </div>
             <a href="/fillandaddprogressreport.aspx" class="nav-link"
@@ -66,7 +66,7 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
           <div class="list-item">
             <div class="icons">
               <a href="/link and add publications.aspx">
-                <i class="far fa-plus-square"></i>
+                <i class="far fa-newspaper"></i>
               </a>
             </div>
             <a href="/link and add publications.aspx" class="nav-link"
