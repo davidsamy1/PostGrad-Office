@@ -1,31 +1,238 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="fillandaddprogressreport.aspx.cs" Inherits="WebApplication1.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"
+CodeBehind="fillandaddprogressreport.aspx.cs"
+Inherits="WebApplication1.WebForm2" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        
-        ADD AND FILL YOUR PROGRESS REPORT<br />
-        <br />
-        THESIS SERIAL NO.<br />
-        <asp:TextBox ID="thserialno" runat="server"></asp:TextBox>
-        <br />
-        POROGRESSREPORT NO.<br />
-        <asp:TextBox ID="progno" runat="server" OnTextChanged="progno_TextChanged" ></asp:TextBox>
-        <br />
-        STATE<br />
-        <asp:TextBox ID="state" runat="server" ></asp:TextBox>
-        <br />
-        DESCRIPTION:<br />
-        <asp:TextBox ID="description" runat="server"></asp:TextBox>
-        <br />
-        
-        <asp:Button ID="Button1" runat="server" Text="ADD AND FILL PROGRESS REPORT" OnClick="Button1_Click" />
-        <br />
-    </form>
-</body>
+  <head runat="server">
+    <title>Progress Reports</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <style>
+      .main-content {
+        height: max(90vh, auto);
+        margin-left: 3rem;
+        border-radius: 15px;
+        position: relative;
+        padding: 15px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
+        background-color: hsla(0, 0%, 100%, 0.251);
+        backdrop-filter: blur(20px);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+        overflow-x: auto;
+        width: max(max-content, auto);
+      }
+
+      form {
+        position: relative;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        border-radius: 15px;
+      }
+
+      .text {
+        width: 50%;
+        outline: none;
+        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 10px;
+        padding-left: 40px;
+        border-radius: 15px;
+        color: #fff;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      input[type='submit'] {
+        background: #fff;
+        color: #111;
+        /* max-width: 100px; */
+        padding: 8px 10px;
+        box-shadow: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 1.5s;
+        border-radius: 15px;
+      }
+
+      input[type='submit']:hover {
+        background: linear-gradient(
+          115deg,
+          rgba(0, 0, 0, 0.1),
+          rgba(255, 255, 255, 0.25)
+        );
+        color: #fff;
+        transition: 0.5s;
+      }
+
+      input::placeholder {
+        color: #fff;
+      }
+
+      .grid {
+        background: #fff;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 15px -5px hsla(0, 0%, 0%, 0.188);
+        background-color: hsla(0, 0%, 100%, 0.251);
+        border: 2px solid hsla(0, 0%, 100%, 0.188);
+        overflow: hidden;
+        /* height: auto; */
+        /* width: 110%; */
+      }
+      .pager {
+        background: #0f0;
+      }
+
+      .header {
+        background: #0f0;
+        padding: 1rem !important;
+      }
+
+      .rows {
+        background: #fff;
+      }
+      td,
+      th {
+        padding: 0.25em;
+      }
+      td:last-child,
+      th:last-child {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar" id="nav">
+      <button class="toggle-menu" id="menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-items">
+        <div class="admin-profile">
+          <div class="icons">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <span class="nav-link">Student</span>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/Student info.aspx">
+              <i class="fas fa-info"></i>
+            </a>
+          </div>
+          <a href="/Student info.aspx" class="nav-link">Student Info</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/courses.aspx">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+          </div>
+          <a href="/courses.aspx" class="nav-link">Courses</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/getall thesis.aspx">
+              <i class="fas fa-scroll"></i>
+            </a>
+          </div>
+          <a href="/getall thesis.aspx" class="nav-link">Theses</a>
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/fillandaddprogressreport.aspx">
+              <i class="fas fa-clipboard"></i>
+            </a>
+          </div>
+          <a href="/fillandaddprogressreport.aspx" class="nav-link"
+            >Reports</a
+          >
+        </div>
+        <div class="list-item">
+          <div class="icons">
+            <a href="/link and add publications.aspx">
+              <i class="far fa-newspaper"></i>
+            </a>
+          </div>
+          <a href="/link and add publications.aspx" class="nav-link"
+            >Publications</a
+          >
+        </div>
+        <div class="list-item logout">
+          <div class="icons">
+            <a href="#">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </div>
+          <a href="#" class="nav-link">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <section class="main-content">
+      <form id="form1" runat="server">
+        <asp:label runat="server" class="label">
+          THESIS SERIAL NO.
+        </asp:label>
+        <asp:TextBox
+          ID="thserialno"
+          class="text"
+          runat="server"
+        ></asp:TextBox>
+
+        <asp:label runat="server" class="label">
+          POROGRESSREPORT NO.
+        </asp:label>
+        <asp:TextBox
+          ID="progno"
+          class="text"
+          runat="server"
+          OnTextChanged="progno_TextChanged"
+        ></asp:TextBox>
+
+        <asp:label runat="server" class="label"> STATE </asp:label>
+        <asp:TextBox
+          ID="state"
+          class="text"
+          runat="server"
+        ></asp:TextBox>
+
+        <asp:label runat="server" class="label">
+          DESCRIPTION:
+        </asp:label>
+        <asp:TextBox
+          ID="description"
+          class="text"
+          runat="server"
+        ></asp:TextBox>
+
+        <asp:Button
+          ID="Button1"
+          runat="server"
+          Text="ADD AND FILL PROGRESS REPORT"
+          OnClick="Button1_Click"
+        />
+      </form>
+    </section>
+    <script src="./scripts/navigation.js"></script>
+    <script>
+      setActive(3);
+    </script>
+  </body>
 </html>
