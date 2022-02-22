@@ -84,22 +84,7 @@ home.aspx.cs" Inherits="WebApplication1.WebForm3" %>
         </div>
       </nav>
     </div>
-    <form id="form1" runat="server">
-      <!-- <div>
-            
-            <asp:Button class="btn" ID="Button1" runat="server" Height="53px" Text="view all my info" Width="177px" OnClick="Button1_Click" />
-            <br />
-            <asp:Button class="btn" ID="Button2" runat="server" Text="courses" OnClick="Button2_Click" Width="144px" />
-            <br />
-            <asp:Button class="btn" ID="Button3" runat="server" Text="get all thesis" OnClick="Button3_Click" Width="145px" />
-            <br />
-            <asp:Button class="btn" ID="Button4" runat="server" Text="fill/addprogressreport" Width="227px" OnClick="Button4_Click" />
-            <br />
-            <asp:Button ID="Button5" class="btn" runat="server" Text="Link and add publication
-                " Width="246px" OnClick="Button5_Click" />
-            <br />
-        </div> -->
-    </form>
+    <form id="form1" runat="server"></form>
     <script src="./scripts/navigation.js"></script>
   </body>
 </html>
