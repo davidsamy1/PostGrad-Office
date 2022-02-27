@@ -200,7 +200,7 @@ info.aspx.cs" Inherits="DatabaseWebsite.Student_viewer" %>
     </section>
     <script src="./scripts/navigation.js"></script>
     <script>
-      setActive(1);
+      setActive(0);
     </script>
   </body>
 </html>

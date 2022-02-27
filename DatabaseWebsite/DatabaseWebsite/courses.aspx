@@ -201,7 +201,7 @@ CodeBehind="Courses.aspx.cs" Inherits="DatabaseWebsite.Student_thesis"
     </section>
     <script src="./scripts/navigation.js"></script>
     <script>
-      setActive(2);
+      setActive(1);
     </script>
   </body>
 </html>
